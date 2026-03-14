@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Savanna Threads</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,16 +17,15 @@ box-sizing:border-box;
 }
 
 body{
-font-family: 'Inter', sans-serif;
-background:#f8f6f2;
+font-family:'Inter',sans-serif;
+background:#f6f3ee;
 color:#333;
 }
 
-/* Colors */
 :root{
---savanna-green:#2f4f3f;
---sand-beige:#e6d7b9;
---clay-brown:#a46b3a;
+--green:#254a37;
+--gold:#a46b3a;
+--sand:#efe6d6;
 }
 
 /* HEADER */
@@ -34,15 +34,15 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:20px 80px;
 background:white;
-border-bottom:1px solid #eee;
+border-bottom:1px solid #e6e6e6;
 }
 
 .logo{
-font-family:'Playfair Display', serif;
-font-size:26px;
-color:var(--clay-brown);
+font-family:'Playfair Display',serif;
+font-size:28px;
+color:var(--gold);
 }
 
 nav ul{
@@ -53,66 +53,51 @@ gap:30px;
 
 nav a{
 text-decoration:none;
-color:#333;
-font-weight:500;
-}
-
-.icons{
-display:flex;
-gap:15px;
-font-size:18px;
+color:#444;
+font-size:15px;
 }
 
 /* HERO */
 
 .hero{
-height:80vh;
-background-image:url('https://images.unsplash.com/photo-1517832606299-7ae9b720a186');
+height:75vh;
+background-image:url("https://images.unsplash.com/photo-1520975916090-3105956dac38");
 background-size:cover;
 background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:white;
 }
 
-.hero-content{
-background:rgba(0,0,0,0.3);
-padding:40px;
+.hero-box{
+background:rgba(0,0,0,0.35);
+padding:40px 60px;
+color:white;
 }
 
 .hero h1{
-font-family:'Playfair Display', serif;
+font-family:'Playfair Display',serif;
 font-size:48px;
-margin-bottom:10px;
-}
-
-.hero p{
-margin-bottom:25px;
-font-size:18px;
+margin-bottom:20px;
 }
 
 .btn{
-padding:12px 28px;
+padding:12px 30px;
 border:none;
+background:var(--green);
+color:white;
 cursor:pointer;
 font-size:15px;
-margin:5px;
 }
 
-.btn-green{
-background:var(--savanna-green);
-color:white;
-}
-
-/* CATEGORY */
+/* CATEGORY GRID */
 
 .categories{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:60px;
+gap:25px;
+padding:60px 80px;
 }
 
 .category{
@@ -121,62 +106,79 @@ position:relative;
 
 .category img{
 width:100%;
-height:350px;
+height:320px;
 object-fit:cover;
 }
 
-.category h3{
+.category span{
 position:absolute;
 bottom:20px;
-left:20px;
+left:50%;
+transform:translateX(-50%);
 background:white;
-padding:8px 15px;
+padding:10px 25px;
+font-size:14px;
 }
 
 /* ESSENTIALS */
 
 .section-title{
 text-align:center;
-font-family:'Playfair Display', serif;
+font-family:'Playfair Display',serif;
 font-size:28px;
-margin:60px 0 30px;
+margin-bottom:40px;
+}
+
+.essentials{
+padding:0 80px 60px 80px;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-padding:0 60px 60px;
-}
-
-.product{
-background:white;
-padding:10px;
-text-align:center;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .product img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
 }
 
-.product h4{
-margin:10px 0;
+.product button{
+margin-top:10px;
+padding:10px 20px;
+background:var(--green);
+border:none;
+color:white;
 }
 
-.price{
-color:var(--savanna-green);
-font-weight:600;
+/* VIDEO SECTION */
+
+.video{
+padding:80px;
+background:#faf7f2;
+text-align:center;
 }
 
-/* BRAND STORY */
+.video h2{
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+}
+
+.video video{
+width:70%;
+border-radius:8px;
+margin-bottom:20px;
+}
+
+/* STORY BANNER */
 
 .story{
-background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
+height:300px;
+background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
 background-size:cover;
 background-position:center;
-height:350px;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -185,51 +187,34 @@ color:white;
 }
 
 .story-box{
-background:rgba(0,0,0,0.4);
+background:rgba(0,0,0,0.35);
 padding:40px;
-max-width:600px;
 }
 
-/* INSTAGRAM */
-
-.instagram{
-padding:60px;
-text-align:center;
-}
-
-.instagram-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-margin-top:20px;
-}
-
-.instagram-grid img{
-width:100%;
-height:200px;
-object-fit:cover;
+.story h2{
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
 }
 
 /* NEWSLETTER */
 
 .newsletter{
-background:var(--sand-beige);
+padding:60px;
 text-align:center;
-padding:50px;
+background:var(--sand);
 }
 
 .newsletter input{
 padding:12px;
 width:250px;
-margin-right:10px;
 border:none;
 }
 
 .newsletter button{
 padding:12px 20px;
-background:var(--savanna-green);
-color:white;
+background:var(--green);
 border:none;
+color:white;
 }
 
 /* FOOTER */
@@ -237,14 +222,9 @@ border:none;
 footer{
 background:#111;
 color:white;
-padding:50px 60px;
+padding:50px 80px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-footer h4{
-margin-bottom:15px;
 }
 
 footer ul{
@@ -252,12 +232,7 @@ list-style:none;
 }
 
 footer li{
-margin-bottom:8px;
-}
-
-footer a{
-color:#ddd;
-text-decoration:none;
+margin-bottom:10px;
 }
 
 /* RESPONSIVE */
@@ -269,16 +244,16 @@ grid-template-columns:1fr;
 }
 
 .products{
-grid-template-columns:1fr 1fr;
+grid-template-columns:1fr;
 }
 
-.instagram-grid{
-grid-template-columns:1fr 1fr;
+.video video{
+width:100%;
 }
 
 header{
 flex-direction:column;
-gap:15px;
+gap:20px;
 }
 
 }
@@ -288,8 +263,6 @@ gap:15px;
 
 
 <body>
-
-<!-- HEADER -->
 
 <header>
 
@@ -301,16 +274,9 @@ gap:15px;
 <li><a href="#">Men</a></li>
 <li><a href="#">New Arrivals</a></li>
 <li><a href="#">Accessories</a></li>
-<li><a href="#">Collections</a></li>
 <li><a href="#">About</a></li>
 </ul>
 </nav>
-
-<div class="icons">
-<span>🔍</span>
-<span>👤</span>
-<span>🛒</span>
-</div>
 
 </header>
 
@@ -319,14 +285,11 @@ gap:15px;
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="hero-box">
 
-<h1>Style Inspired by the Savanna</h1>
+<h1>STYLE INSPIRED BY AFRICA</h1>
 
-<p>Modern fashion rooted in African identity.</p>
-
-<button class="btn btn-green">Shop Women</button>
-<button class="btn">Shop Men</button>
+<button class="btn">SHOP NOW</button>
 
 </div>
 
@@ -339,17 +302,17 @@ gap:15px;
 
 <div class="category">
 <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
-<h3>Women's Collection</h3>
+<span>WOMEN'S COLLECTION</span>
 </div>
 
 <div class="category">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
-<h3>Men's Collection</h3>
+<span>MEN'S COLLECTION</span>
 </div>
 
 <div class="category">
 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-<h3>New Arrivals</h3>
+<span>NEW ARRIVALS</span>
 </div>
 
 </section>
@@ -357,33 +320,49 @@ gap:15px;
 
 <!-- ESSENTIALS -->
 
-<h2 class="section-title">Essentials for the Season</h2>
+<section class="essentials">
 
-<section class="products">
+<h2 class="section-title">ESSENTIALS FOR THE SEASON</h2>
+
+<div class="products">
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-<h4>Linen Shirt</h4>
-<p class="price">$65</p>
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+<button>SHOP WOMEN</button>
 </div>
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47">
-<h4>Cotton Dress</h4>
-<p class="price">$80</p>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
-<h4>Leather Sandals</h4>
-<p class="price">$55</p>
+<button>SHOP MEN</button>
 </div>
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3">
-<h4>Woven Bag</h4>
-<p class="price">$70</p>
+<button>SHOP MEN</button>
 </div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEO -->
+
+<section class="video">
+
+<h2>Meet Victor</h2>
+
+<video controls>
+
+<source src="victor-intro.mp4" type="video/mp4">
+
+</video>
+
+<p>
+
+Hello I'm Victor. If you're visiting this site there's a good chance you're looking for someone who understands how to handle situations like yours. That's exactly what we specialize in. If it looks like we might be a good fit I'd be happy to start a conversation.
+
+</p>
 
 </section>
 
@@ -394,34 +373,11 @@ gap:15px;
 
 <div class="story-box">
 
-<h2>Discover the Spirit of the Savanna</h2>
+<h2>DISCOVER THE SPIRIT OF SAVANNA</h2>
 
-<p>
-Savanna Threads blends contemporary fashion with the natural beauty and heritage of Africa.
-Designed for modern individuals who value simplicity, elegance and authenticity.
-</p>
+<p>ELEVATED STYLE • AFRICAN HERITAGE</p>
 
-<br>
-
-<button class="btn btn-green">Our Story</button>
-
-</div>
-
-</section>
-
-
-<!-- INSTAGRAM -->
-
-<section class="instagram">
-
-<h2>#SavannaThreads</h2>
-
-<div class="instagram-grid">
-
-<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
-<img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91">
+<button class="btn">LEARN MORE</button>
 
 </div>
 
@@ -432,29 +388,31 @@ Designed for modern individuals who value simplicity, elegance and authenticity.
 
 <section class="newsletter">
 
-<h2>Join the Savanna Community</h2>
+<h2>SIGN UP FOR OUR NEWSLETTER</h2>
 
 <br>
 
 <input type="email" placeholder="Enter your email">
 
-<button>Subscribe</button>
+<button>SUBSCRIBE</button>
 
 </section>
 
-
-<!-- FOOTER -->
 
 <footer>
 
 <div>
 
-<h4>Customer Care</h4>
+<h3>Customer Care</h3>
 
 <ul>
-<li><a href="#">Shipping</a></li>
-<li><a href="#">Returns</a></li>
-<li><a href="#">Contact</a></li>
+
+<li>Shipping</li>
+
+<li>Returns</li>
+
+<li>Contact</li>
+
 </ul>
 
 </div>
@@ -462,11 +420,14 @@ Designed for modern individuals who value simplicity, elegance and authenticity.
 
 <div>
 
-<h4>Company</h4>
+<h3>Company</h3>
 
 <ul>
-<li><a href="#">About</a></li>
-<li><a href="#">Careers</a></li>
+
+<li>About</li>
+
+<li>Careers</li>
+
 </ul>
 
 </div>
@@ -474,15 +435,20 @@ Designed for modern individuals who value simplicity, elegance and authenticity.
 
 <div>
 
-<h4>Follow Us</h4>
+<h3>Follow Us</h3>
 
 <ul>
-<li><a href="#">Instagram</a></li>
-<li><a href="#">TikTok</a></li>
-<li><a href="#">Pinterest</a></li>
+
+<li>Instagram</li>
+
+<li>TikTok</li>
+
+<li>Pinterest</li>
+
 </ul>
 
 </div>
+
 
 </footer>
 
