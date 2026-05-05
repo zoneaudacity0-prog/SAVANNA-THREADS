@@ -4,172 +4,264 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Savannah Threads</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #222;
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f8f6f2;
+color:#333;
 }
 
-header {
-    background: #000;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+:root{
+--savanna-green:#2f4f3f;
+--sand-beige:#e6d7b9;
+--clay-brown:#a46b3a;
 }
 
-.hero {
-    padding: 60px 20px;
-    text-align: center;
-    background: #f5f5f5;
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:white;
+border-bottom:1px solid #eee;
 }
 
-.hero h1 {
-    font-size: 36px;
+.logo{
+font-family:'Playfair Display', serif;
+font-size:26px;
+color:var(--clay-brown);
 }
 
-.hero p {
-    margin: 10px 0 20px;
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
 }
 
-.btn {
-    padding: 12px 25px;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    margin: 5px;
-    display: inline-block;
+nav a{
+text-decoration:none;
+color:#333;
 }
 
-.section {
-    padding: 40px 20px;
-    text-align: center;
+/* HERO */
+.hero{
+height:80vh;
+background:url('https://images.unsplash.com/photo-1517832606299-7ae9b720a186') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
 }
 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+.hero-content{
+background:rgba(0,0,0,0.4);
+padding:40px;
 }
 
-.card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    width: 250px;
+.hero h1{
+font-family:'Playfair Display';
+font-size:48px;
 }
 
-.card img {
-    width: 100%;
+.btn{
+padding:12px 25px;
+background:var(--savanna-green);
+color:white;
+border:none;
+margin:10px;
+cursor:pointer;
 }
 
-footer {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+/* CATEGORY */
+.categories{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:60px;
 }
 
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: green;
-    color: #fff;
-    padding: 15px;
-    text-decoration: none;
-    border-radius: 50%;
+.category img{
+width:100%;
+height:300px;
+object-fit:cover;
 }
+
+.category h3{
+position:absolute;
+background:white;
+padding:8px;
+}
+
+/* PRODUCTS */
+.section{
+padding:50px;
+text-align:center;
+}
+
+.grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+background:white;
+padding:15px;
+width:250px;
+border:1px solid #eee;
+}
+
+.card img{width:100%;}
+
+/* STORY */
+.story{
+background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover;
+color:white;
+padding:80px;
+text-align:center;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:green;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+@media(max-width:900px){
+.categories{grid-template-columns:1fr;}
+.grid{flex-direction:column;align-items:center;}
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <h2>Savannah Threads</h2>
+<div class="logo">Savannah Threads</div>
+<nav>
+<ul>
+<li><a href="#">Women</a></li>
+<li><a href="#">Men</a></li>
+<li><a href="#">Accessories</a></li>
+<li><a href="#">New</a></li>
+<li><a href="#">About</a></li>
+</ul>
+</nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-    <h1>Wear Confidence. Carry Presence.</h1>
-    <p>Premium handbags, clothing, and accessories for the modern African lifestyle.</p>
-    <a href="#products" class="btn">Shop Now</a>
+<div class="hero-content">
+<h1>Wear Confidence. Carry Presence.</h1>
+<p>Premium fashion for modern African lifestyle.</p>
+<button class="btn">Shop Now</button>
+</div>
 </section>
 
+<!-- CATEGORIES -->
+<section class="categories">
+<div class="category">
+<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+</div>
+<div class="category">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
+</div>
+<div class="category">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+</div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
 <section class="section">
-    <h2>Shop by Category</h2>
-    <div class="grid">
-        <div class="card">Handbags</div>
-        <div class="card">Clothing</div>
-        <div class="card">Accessories</div>
-        <div class="card">New Arrivals</div>
-    </div>
+<h2>Featured Products</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://via.placeholder.com/250">
+<h3>Chrisbella Handbag</h3>
+<p>TZS 85,000</p>
+<button class="btn">Order</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/250">
+<h3>Minimal T-Shirt</h3>
+<p>TZS 25,000</p>
+<button class="btn">Order</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/250">
+<h3>Sunglasses</h3>
+<p>TZS 40,000</p>
+<button class="btn">Order</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/250">
+<h3>Watch</h3>
+<p>TZS 120,000</p>
+<button class="btn">Order</button>
+</div>
+
+</div>
 </section>
 
-<section class="section" id="products">
-    <h2>Featured Products</h2>
-    <div class="grid">
-
-        <div class="card">
-            <img src="https://via.placeholder.com/250">
-            <h3>Chrisbella Handbag</h3>
-            <p>Elegant, durable, premium design</p>
-            <p><strong>TZS 85,000</strong></p>
-            <a href="#" class="btn">Order</a>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/250">
-            <h3>Minimal T-Shirt</h3>
-            <p>Clean fit, everyday wear</p>
-            <p><strong>TZS 25,000</strong></p>
-            <a href="#" class="btn">Order</a>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/250">
-            <h3>Luxury Sunglasses</h3>
-            <p>Stylish and protective</p>
-            <p><strong>TZS 40,000</strong></p>
-            <a href="#" class="btn">Order</a>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/250">
-            <h3>Executive Watch</h3>
-            <p>Elegant timepiece</p>
-            <p><strong>TZS 120,000</strong></p>
-            <a href="#" class="btn">Order</a>
-        </div>
-
-    </div>
-</section>
-
+<!-- WHY -->
 <section class="section">
-    <h2>Why Savannah Threads?</h2>
-    <p>Premium quality. Modern design. Built for confidence.</p>
+<h2>Why Savannah Threads?</h2>
+<p>Premium quality. Built for confidence. Designed for you.</p>
 </section>
 
+<!-- HOW TO ORDER -->
 <section class="section">
-    <h2>How to Order</h2>
-    <p>1. Choose product<br>
-       2. Click order<br>
-       3. Confirm via WhatsApp<br>
-       4. Fast delivery</p>
+<h2>How to Order</h2>
+<p>1. Choose item<br>2. Click order<br>3. Confirm via WhatsApp<br>4. Delivery</p>
 </section>
 
+<!-- STORY -->
+<section class="story">
+<h2>Discover the Spirit of the Savanna</h2>
+<p>Fashion inspired by African identity and modern lifestyle.</p>
+</section>
+
+<!-- REVIEWS -->
 <section class="section">
-    <h2>Customer Reviews</h2>
-    <p>"Amazing quality and style!"</p>
-    <p>"I get compliments everywhere."</p>
+<h2>Customer Reviews</h2>
+<p>"Amazing quality!"</p>
+<p>"I get compliments everywhere."</p>
 </section>
 
 <footer>
-    <p>Savannah Threads | Tanzania</p>
-    <p>Contact: +255 769 715 715 </p>
+<p>Savannah Threads | Tanzania</p>
+<p>Contact: +255 769 715 715</p>
 </footer>
 
-<a href="https://wa.me/255XXXXXXXXX" class="whatsapp">Chat</a>
+<a href="https://wa.me/255769715715" class="whatsapp">Chat</a>
 
 </body>
 </html>
