@@ -5,263 +5,157 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Savannah Threads</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
+body{font-family:Arial;margin:0;background:#f5f5f5}
 
-*{margin:0;padding:0;box-sizing:border-box;}
+header{background:#000;color:#fff;padding:15px;text-align:center}
 
-body{
-font-family:'Inter',sans-serif;
-background:#f8f6f2;
-color:#333;
-}
+.products{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:20px}
 
-:root{
---savanna-green:#2f4f3f;
---sand-beige:#e6d7b9;
---clay-brown:#a46b3a;
-}
+.card{background:#fff;padding:15px;width:220px;text-align:center;border-radius:6px}
 
-/* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:white;
-border-bottom:1px solid #eee;
-}
+button{padding:10px;background:#000;color:#fff;border:none;cursor:pointer;margin-top:10px}
 
-.logo{
-font-family:'Playfair Display', serif;
-font-size:26px;
-color:var(--clay-brown);
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
-}
-
-nav a{
-text-decoration:none;
-color:#333;
-}
-
-/* HERO */
-.hero{
-height:80vh;
-background:url('https://images.unsplash.com/photo-1517832606299-7ae9b720a186') center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-}
-
-.hero-content{
-background:rgba(0,0,0,0.4);
-padding:40px;
-}
-
-.hero h1{
-font-family:'Playfair Display';
-font-size:48px;
-}
-
-.btn{
-padding:12px 25px;
-background:var(--savanna-green);
-color:white;
-border:none;
-margin:10px;
-cursor:pointer;
-}
-
-/* CATEGORY */
-.categories{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:60px;
-}
-
-.category img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-.category h3{
-position:absolute;
-background:white;
-padding:8px;
-}
-
-/* PRODUCTS */
-.section{
-padding:50px;
-text-align:center;
-}
-
-.grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
-
-.card{
-background:white;
-padding:15px;
-width:250px;
-border:1px solid #eee;
-}
-
-.card img{width:100%;}
-
-/* STORY */
-.story{
-background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover;
-color:white;
-padding:80px;
-text-align:center;
-}
-
-/* WHATSAPP */
-.whatsapp{
+.cart{
 position:fixed;
-bottom:20px;
-right:20px;
-background:green;
-color:white;
+top:0;
+right:0;
+width:300px;
+height:100%;
+background:#fff;
+border-left:2px solid #000;
 padding:15px;
-border-radius:50%;
-text-decoration:none;
+overflow:auto;
 }
 
-/* FOOTER */
-footer{
-background:#111;
-color:white;
-padding:40px;
-text-align:center;
-}
+.cart h3{text-align:center}
 
-@media(max-width:900px){
-.categories{grid-template-columns:1fr;}
-.grid{flex-direction:column;align-items:center;}
-}
+.cart-item{display:flex;justify-content:space-between;margin:10px 0}
 
+.checkout{margin-top:20px}
+
+input{width:100%;padding:8px;margin:5px 0}
+
+.whatsapp-btn{
+background:green;
+color:#fff;
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">Savannah Threads</div>
-<nav>
-<ul>
-<li><a href="#">Women</a></li>
-<li><a href="#">Men</a></li>
-<li><a href="#">Accessories</a></li>
-<li><a href="#">New</a></li>
-<li><a href="#">About</a></li>
-</ul>
-</nav>
+<h2>Savannah Threads</h2>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-content">
-<h1>Wear Confidence. Carry Presence.</h1>
-<p>Premium fashion for modern African lifestyle.</p>
-<button class="btn">Shop Now</button>
-</div>
-</section>
-
-<!-- CATEGORIES -->
-<section class="categories">
-<div class="category">
-<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
-</div>
-<div class="category">
-<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
-</div>
-<div class="category">
-<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-</div>
-</section>
-
-<!-- FEATURED PRODUCTS -->
-<section class="section">
-<h2>Featured Products</h2>
-<div class="grid">
+<!-- PRODUCTS -->
+<div class="products">
 
 <div class="card">
-<img src="https://via.placeholder.com/250">
-<h3>Chrisbella Handbag</h3>
-<p>TZS 85,000</p>
-<button class="btn">Order</button>
+<h4>Chrisbella Handbag</h4>
+<p>TZS 85000</p>
+<button onclick="addToCart('Chrisbella Handbag',85000)">Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/250">
-<h3>Minimal T-Shirt</h3>
-<p>TZS 25,000</p>
-<button class="btn">Order</button>
+<h4>Minimal T-Shirt</h4>
+<p>TZS 25000</p>
+<button onclick="addToCart('T-Shirt',25000)">Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/250">
-<h3>Sunglasses</h3>
-<p>TZS 40,000</p>
-<button class="btn">Order</button>
+<h4>Sunglasses</h4>
+<p>TZS 40000</p>
+<button onclick="addToCart('Sunglasses',40000)">Add to Cart</button>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/250">
-<h3>Watch</h3>
-<p>TZS 120,000</p>
-<button class="btn">Order</button>
+<h4>Watch</h4>
+<p>TZS 120000</p>
+<button onclick="addToCart('Watch',120000)">Add to Cart</button>
 </div>
 
 </div>
-</section>
 
-<!-- WHY -->
-<section class="section">
-<h2>Why Savannah Threads?</h2>
-<p>Premium quality. Built for confidence. Designed for you.</p>
-</section>
+<!-- CART -->
+<div class="cart">
+<h3>Your Cart</h3>
+<div id="cart-items"></div>
+<h4>Total: TZS <span id="total">0</span></h4>
 
-<!-- HOW TO ORDER -->
-<section class="section">
-<h2>How to Order</h2>
-<p>1. Choose item<br>2. Click order<br>3. Confirm via WhatsApp<br>4. Delivery</p>
-</section>
+<div class="checkout">
+<h4>Checkout</h4>
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="phone" placeholder="Phone Number">
+<input type="text" id="location" placeholder="Location">
 
-<!-- STORY -->
-<section class="story">
-<h2>Discover the Spirit of the Savanna</h2>
-<p>Fashion inspired by African identity and modern lifestyle.</p>
-</section>
+<button class="whatsapp-btn" onclick="checkout()">Order via WhatsApp</button>
+</div>
+</div>
 
-<!-- REVIEWS -->
-<section class="section">
-<h2>Customer Reviews</h2>
-<p>"Amazing quality!"</p>
-<p>"I get compliments everywhere."</p>
-</section>
+<script>
 
-<footer>
-<p>Savannah Threads | Tanzania</p>
-<p>Contact: +255 769 715 715</p>
-</footer>
+let cart = [];
 
-<a href="https://wa.me/255769715715" class="whatsapp">Chat</a>
+function addToCart(name, price){
+cart.push({name, price});
+renderCart();
+}
+
+function renderCart(){
+let cartItems = document.getElementById("cart-items");
+let total = 0;
+cartItems.innerHTML = "";
+
+cart.forEach((item, index)=>{
+total += item.price;
+
+cartItems.innerHTML += `
+<div class="cart-item">
+${item.name} - ${item.price}
+<button onclick="removeItem(${index})">x</button>
+</div>
+`;
+});
+
+document.getElementById("total").innerText = total;
+}
+
+function removeItem(index){
+cart.splice(index,1);
+renderCart();
+}
+
+function checkout(){
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let location = document.getElementById("location").value;
+
+if(!name || !phone || !location){
+alert("Please fill all details");
+return;
+}
+
+let message = "New Order:%0A";
+
+cart.forEach(item=>{
+message += `${item.name} - TZS ${item.price}%0A`;
+});
+
+message += `%0ATotal: TZS ${document.getElementById("total").innerText}`;
+message += `%0AName: ${name}`;
+message += `%0APhone: ${phone}`;
+message += `%0ALocation: ${location}`;
+
+window.open(`https://wa.me/255769715715?text=${message}`);
+}
+
+</script>
 
 </body>
 </html>
